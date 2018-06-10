@@ -21,3 +21,10 @@ kubecl create -f cert-manager/letsencryp-clusterissuer-staging.yaml
 kubecl create -f cert-manager/certificate-letsencrypt-staging.yaml
 
 Then, switch Staging to Prod.
+
+# Load your own certificate manually via kube CLI
+
+kubectl create secret tls foo-secret --key tls.key --cert tls.crt
+
+
+
