@@ -20,6 +20,12 @@ helm init --service-account tiller --upgrade
 
 helm install --name nginx-ingress stable/nginx-ingress --set rbac.create=true --namespace=kube-system
 
+kubectl create secret tls wild.dakar.io --key privkey1.pem --cert fullchain1.pem
+
+kubectl edit deploy nginx-ingress-controller  -n kube-system
+
+Then, add - --default-ssl-certificate=default/wild.dakar.io
+
 # Generate Certificate from letsencrypt
 
 helm install --name cert-manager --namespace kube-system stable/cert-manager
