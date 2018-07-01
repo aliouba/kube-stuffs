@@ -18,7 +18,7 @@ kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"templat
 
 helm init --service-account tiller --upgrade
 
-helm install --name nginx-ingress stable/nginx-ingress --set rbac.create=true -n kube-system
+helm install --name nginx-ingress stable/nginx-ingress --set rbac.create=true --namespace=kube-system
 
 # Generate Certificate from letsencrypt
 
