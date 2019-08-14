@@ -1,8 +1,7 @@
-# kube-stuffs
 
-#Generate letsencrypt keys
+## Generate letsencrypt keys
 
-#Install certbot
+## Install certbot
 ```
 sudo apt-get update -y 
 sudo pip install -U pyopenssl
